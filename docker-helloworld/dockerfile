@@ -1,0 +1,9 @@
+# Ubuntu 18.04 with Java 8 installed.
+
+FROM love3001/java-repository:ubuntu-18.04-with-java8
+
+MAINTAINER LOVE TANEJA, https://github.com/lovetaneja
+
+COPY helloworld.jar /usr/src/helloworld-1.0-SNAPSHOT.jar
+
+CMD java -cp /usr/src/helloworld-1.0-SNAPSHOT.jar org.examples.java.App
