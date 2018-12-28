@@ -1,0 +1,18 @@
+version: "3.0"
+services:
+  web:
+    image: love3001/java-repository:tomcat-9.0.18
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 1G
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8080:8080"
+    networks:
+      - webnet
+networks:
+  webnet:
