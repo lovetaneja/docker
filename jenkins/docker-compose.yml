@@ -1,0 +1,19 @@
+version: "3.0"
+services:
+  web:
+    image: jenkins/jenkins:lts
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 1G
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8080:8080"
+      - 50000:50000
+    networks:
+      - webnet
+networks:
+  webnet:
