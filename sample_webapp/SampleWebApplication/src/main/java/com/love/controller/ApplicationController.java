@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ApplicationController {
     @RequestMapping(value="/Test", method = RequestMethod.GET)
     public String welcome(ModelMap model) {
-        model.addAttribute("msgArgument", "Maven Java Web Application Project: Success!");
+        model.addAttribute("msgArgument", "Maven Java Web Application Project: Success :) !");
         System.out.println("Inside welcome method");
         return "index";
     }
