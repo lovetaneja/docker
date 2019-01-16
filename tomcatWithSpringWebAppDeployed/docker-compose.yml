@@ -1,0 +1,22 @@
+version: "3.0"
+services:
+  web:
+    image: love3001/java-repository:tomcat-sample-SpringMVC-App
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 1G
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8080:8080"
+    networks:
+      - webnet
+    volumes:
+      - tomcatVolum:/usr/local/tomcat/logs	
+networks:
+  webnet:
+volumes:
+    tomcatVolum:	
