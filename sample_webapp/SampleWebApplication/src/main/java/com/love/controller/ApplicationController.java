@@ -12,12 +12,14 @@ public class ApplicationController {
     @RequestMapping(value="/Test", method = RequestMethod.GET)
     public String welcome(ModelMap model) {
         model.addAttribute("msgArgument", "Maven Java Web Application Project: Success!");
+        System.out.println("Inside welcome method");
         return "index";
     }
 
     @RequestMapping(value="/Print/{arg}", method = RequestMethod.GET)
     public String welcomeName(@PathVariable String arg, ModelMap model) {
         model.addAttribute("msgArgument", "Maven Java Web Application Project, input variable: " + arg);
+        System.out.println("Inside welcomeName method");
         return "index";
     }
 }
